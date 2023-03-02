@@ -77,7 +77,7 @@ hidisc/
 ├── README.md
 ├── setup.py            # Setup file including list of dependencies
 ├── LICENSE             # MIT license for the repo
-└── THIRD\_PARTY        # License information for third party code
+└── THIRD_PARTY        # License information for third party code
 ```
 
 ## Training / evaluation instructions
