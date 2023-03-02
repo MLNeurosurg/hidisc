@@ -7,6 +7,18 @@ Companion code for HiDisc, paper in CVPR 2023.
 [**MLiNS Lab**](https://mlins.org) /
 [**OpenSRH**](https://opensrh.mlins.org)
 
+## HiDisc Overview
+
+![Overview](/figures/positive_pairs.png)
+
+Motivated by the patient-slide-patch data hierarchy of clinical biomedical microscopy, HiDisc defines a patient, slide, and patch discriminative learning objective to improve visual representations. Because WSI and microscopy data are inherently hierarchical, defining a unified hierarchical loss function does not require additional annotations or supervision. Positive patch pairs are defined based on a common ancestry in the data hierarchy. A major advantage of HiDisc is the ability to define positive pairs _without_ the need to sample from or learn a set of strong image augmentations, such as random erasing, shears, color inversion, etc. Because each field-of-view in a WSI is a different view of a patient's underlying cancer diagnosis, HiDisc implicitly learns image features that predict that diagnosis.
+
+## Visualization of learned SRH representations
+
+![tSNE Plots](/figures/tsne.png)
+
+Motivated by the patient-slide-patch data hierarchy of clinical biomedical microscopy, HiDisc defines a patient, slide, and patch discriminative learning objective to improve visual representations. Because WSI and microscopy data are inherently hierarchical, defining a unified hierarchical loss function does not require additional annotations or supervision. Positive patch pairs are defined based on a common ancestry in the data hierarchy. A major advantage of HiDisc is the ability to define positive pairs _without_ the need to sample from or learn a set of strong image augmentations, such as random erasing, shears, color inversion, etc. Because each field-of-view in a WSI is a different view of a patient's underlying cancer diagnosis, HiDisc implicitly learns image features that predict that diagnosis.
+
 ## Installation
 
 1. Clone HiDisc github repo
@@ -30,15 +42,22 @@ Companion code for HiDisc, paper in CVPR 2023.
     ```
 
 ## Directory organization
-- hidisc: the library for training HiDisc using OpenSRH
-    - datasets: PyTorch datasets to work with OpenSRH
-    - losses: HiDisc loss functions with contrastive learning
-    - models: PyTorch models for training and evaluation
-    - train: training and evaluation scrpits
-- README.md
-- LICENSE
+```
+hidisc/
+├── hidisc/             # library for HiDisc training with OpenSRH
+│   ├── datasets/       # PyTorch datasets to work with OpenSRH
+│   ├── losses/         # HiDisc loss functions with contrastive learning
+│   ├── models/         # PyTorch models for training and evaluation
+│   └── train/          # Training and evaluation scrpits
+│       └── config/     # Configuration files used for training
+├── figures/            # Figures in the README file
+├── README.md
+├── setup.py            # Setup file including list of dependencies
+├── LICENSE             # MIT license for the repo
+└── THIRD\_PARTY        # License information for third party code
+```
 
-# Training / evaluation instructions
+## Training / evaluation instructions
 
 The code base is written using PyTorch Lightning, with custom network and
 datasets for OpenSRH.
