@@ -3,7 +3,7 @@
 Companion code for HiDisc, paper in CVPR 2023.
 
 [**HiDisc Website**](https://hidisc.mlins.org) /
-[**arXiv** (Coming soon)](https://github.com/MLNeurosurg/hidisc) /
+[**arXiv**](https://arxiv.org/abs/2303.01605) /
 [**MLiNS Lab**](https://mlins.org) /
 [**OpenSRH**](https://opensrh.mlins.org)
 
